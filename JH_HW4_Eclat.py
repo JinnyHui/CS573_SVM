@@ -10,6 +10,7 @@ from sklearn import svm
 from statistics import mean, stdev
 import numpy as np
 import sys
+import subprocess
 
 
 ##################################################
@@ -35,9 +36,11 @@ o.close()
 
 ###################################################
 # run the eclat algorithm with 20% support with descending support
-# './eclat -s20 converted.tab freq.out'
+cmd_1 = './eclat -s20 -v" (%a)" converted.tab freq.out'
+subprocess.call(cmd_1, shell=True)
 # generate association rule
-# './eclat -tr -s20 -v" (%c)" converted.tab association.out
+cmd_2 = './eclat -tr -s20 -c75 -v" (%c)" converted.tab association.out'
+subprocess.call(cmd_2, shell=True)
 
 ###################################################
 # read in the frequent set file, load it into a dict
