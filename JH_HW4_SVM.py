@@ -79,7 +79,7 @@ for train_index, test_index in skf.split(X_3_fold, y_3_fold):
     precision_gaussian = nii_gaussian/n_gaussian
     precision_list_gaussian.append(precision_gaussian)
     print('################################')
-    print('    The', str(counter), 'fold evaluation')
+    print('    The NO.', str(counter), '3-fold evaluation')
     print('Linear SVM evaluation:                     ')
     print(df_confusion_linear)
     print('Best parameter C = ', str(C_linear_list[counter-1]))
@@ -107,7 +107,7 @@ print('Standard deviation:' + avg_dev_gaussian_str + '\n')
 report_out.write(separator + '\n#              Linear SVM evaluation report               #' + '\n' + separator)
 report_out.write('\nAverage accuracy:' + avg_acc_linear_str)
 report_out.write('\nStandard deviation:' + avg_dev_linear_str)
-report_out.write(separator + '\n#              Gaussian SVM evaluation report             #' + '\n' + separator)
+report_out.write('\n\n' + separator + '\n#              Gaussian SVM evaluation report             #' + '\n' + separator)
 report_out.write('\nAverage accuracy:' + avg_acc_gaussian_str)
 report_out.write('\nStandard deviation:' + avg_dev_gaussian_str)
 
