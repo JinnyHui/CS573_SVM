@@ -42,8 +42,8 @@ precision_list_linear = []
 precision_list_gaussian = []
 counter = 1
 for train_index, test_index in skf.split(X_3_fold, y_3_fold):
-    X_train, X_test = X[train_index], X[test_index]
-    y_train, y_test = y[train_index], y[test_index]
+    X_train, X_test = X_3_fold[train_index], X_3_fold[test_index]
+    y_train, y_test = y_3_fold[train_index], y_fold[test_index]
 
     # linear parameter tuning
     # for i in c_list_linear:
